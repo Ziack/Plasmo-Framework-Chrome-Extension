@@ -1,9 +1,9 @@
 import type { PlasmoMessaging } from "@plasmohq/messaging"
 
-const HIDDEN_NUMBER = 541
 
 export type RequestBody = {
-  input: number
+  input: number,
+  input2: number
 }
 
 export type RequestResponse = number
@@ -13,8 +13,9 @@ const handler: PlasmoMessaging.MessageHandler<
   RequestResponse
 > = async (req, res) => {
   const { input } = req.body
+  const { input2 } = req.body
 
-  res.send(input * HIDDEN_NUMBER)
+  res.send(input + input2)
 }
 
 export default handler

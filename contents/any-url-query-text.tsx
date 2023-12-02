@@ -8,7 +8,7 @@ export const config: PlasmoCSConfig = {
 
 const QueryTextAnywhere = () => {
   const { data } = useMessage<string, string>(async (req, res) => {
-    res.send(document.querySelector(req.body).textContent)
+    res.send("Hello! " + req.body)
   })
   return (
     <div
@@ -17,7 +17,7 @@ const QueryTextAnywhere = () => {
         background: "#333",
         color: "red"
       }}>
-      Querying Selector for: {data}
+      Sum is: {data}
     </div>
   )
 }
